@@ -39,7 +39,7 @@ void setup() {
   pinMode(LDR, INPUT);
   // Set WiFi to station mode and disconnect from an AP if it was previously connected
   delay(100);
-  WiFi.begin("ROQUE EDICULA", "01082002");
+  WiFi.begin("", "");
   Serial.println(WiFi.macAddress());
 
   Serial.print("Connecting");
@@ -125,19 +125,6 @@ void loop() {
 
   while (totalPoints > 0) {
     DateTime now = rtc.now();
-
-    Serial.print(now.year(), DEC);
-    Serial.print('/');
-    Serial.print(now.month(), DEC);
-    Serial.print('/');
-    Serial.print(now.day(), DEC);
-    Serial.print(' ');
-    Serial.print(now.hour(), DEC);
-    Serial.print(':');
-    Serial.print(now.minute(), DEC);
-    Serial.print(':');
-    Serial.print(now.second(), DEC);
-    Serial.println();
     totalPoints = totalPoints - 40;
     if (totalPoints > 0) {
 
